@@ -12,6 +12,7 @@
 		8A4A52851D9B470D00128602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52831D9B470D00128602 /* Main.storyboard */; };
 		8A4A52871D9B470D00128602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52861D9B470D00128602 /* Assets.xcassets */; };
 		8A4A528A1D9B470D00128602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52881D9B470D00128602 /* LaunchScreen.storyboard */; };
+		8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC279A1DB1814A00F33203 /* SignInController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8A4A52861D9B470D00128602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4A52891D9B470D00128602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4A528B1D9B470D00128602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AEC279A1DB1814A00F33203 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				8A4A527F1D9B470D00128602 /* AppDelegate.swift */,
 				8A4A52811D9B470D00128602 /* ViewController.swift */,
 				8A4A52831D9B470D00128602 /* Main.storyboard */,
+				8AEC279A1DB1814A00F33203 /* SignInController.swift */,
 				8A4A52861D9B470D00128602 /* Assets.xcassets */,
 				8A4A52881D9B470D00128602 /* LaunchScreen.storyboard */,
 				8A4A528B1D9B470D00128602 /* Info.plist */,
@@ -96,6 +99,7 @@
 				TargetAttributes = {
 					8A4A527B1D9B470D00128602 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -135,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */,
 				8A4A52821D9B470D00128602 /* ViewController.swift in Sources */,
 				8A4A52801D9B470D00128602 /* AppDelegate.swift in Sources */,
 			);
@@ -255,6 +260,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs378Group4.Geopoll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -266,6 +272,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cs378Group4.Geopoll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -288,6 +295,7 @@
 				8A4A52901D9B470D00128602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
