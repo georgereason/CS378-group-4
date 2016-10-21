@@ -1,0 +1,6 @@
+framework module Pods_Geopoll {
+  umbrella header "Pods-Geopoll-umbrella.h"
+
+  export *
+  module * { export * }
+}
