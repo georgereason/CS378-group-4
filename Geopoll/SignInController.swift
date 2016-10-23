@@ -25,10 +25,8 @@ class SignInController: UIViewController {
         print("User signed in with facebook")
         let loginManager = LoginManager()
         // Create reference to a Firebase location
-//        let myRootRef = FIRDatabase.database().reference()
-//        myRootRef.observe(.ChildAdded, with: { (snapshot) in
-//            print("")
-//        })(url: "https://geopoll-5613c.firebaseio.com")
+        let myRootRef = FIRDatabase.database().reference() //getting database
+
         
         
         loginManager.logIn([ .publicProfile, .email ], viewController: self) { loginResult in
@@ -55,6 +53,8 @@ class SignInController: UIViewController {
                             let name = profile.displayName
                             let email = profile.email
                             let photoURL = profile.photoURL
+                            myRootRef.child("users").child(uid).setValue(["name":name!, "email":email!]) //putting user into database
+                            
                         }
                     } else {
                         // No user is signed in.
