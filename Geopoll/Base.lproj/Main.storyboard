@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jED-hU-YMy">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jED-hU-YMy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,65 +19,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-J3-wDw">
-                                <frame key="frameInset" minY="519" width="600" height="40"/>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.2627450980392157" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="G15-56-IyL"/>
-                                    <constraint firstAttribute="width" constant="600" id="GOt-2J-WvP"/>
-                                    <constraint firstAttribute="width" secondItem="dwd-J3-wDw" secondAttribute="height" multiplier="15:1" id="rZt-5k-rsf"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                                <state key="normal" title="Facebook Sign In">
-                                    <color key="titleColor" red="1" green="1" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookButton:" destination="jED-hU-YMy" eventType="touchUpInside" id="owP-v8-COF"/>
-                                    <segue destination="Jw2-Mz-EeD" kind="show" id="5Bx-ec-2WP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A99-Cg-nzc">
-                                <frame key="frameInset" minY="559" width="600" height="41"/>
-                                <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="N6h-sx-U9Q"/>
-                                    <constraint firstAttribute="width" constant="600" id="aQv-RD-0id"/>
-                                    <constraint firstAttribute="width" secondItem="A99-Cg-nzc" secondAttribute="height" multiplier="600:41" id="iGp-PO-5kv"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                                <state key="normal" title="Twitter Sign In">
-                                    <color key="titleColor" red="1" green="1" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="twitterButton:" destination="jED-hU-YMy" eventType="touchUpInside" id="BYU-vP-2St"/>
-                                    <segue destination="Jw2-Mz-EeD" kind="show" id="zTZ-N8-xLY"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GEOPOLL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsw-9k-KME">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="GEOPOLL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsw-9k-KME">
                                 <frame key="frameInset" minY="91" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="U8B-jr-vDq"/>
+                                    <constraint firstAttribute="height" constant="21" id="bc9-mf-4G3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-CX-1d6">
+                                <frame key="frameInset" minY="534" width="118" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-J3-wDw">
+                                        <frame key="frameInset" width="118" height="30"/>
+                                        <color key="backgroundColor" red="0.17254901960784313" green="0.2627450980392157" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                        <state key="normal" title="Facebook Sign In">
+                                            <color key="titleColor" red="1" green="1" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="facebookButton:" destination="jED-hU-YMy" eventType="touchUpInside" id="owP-v8-COF"/>
+                                            <segue destination="Jw2-Mz-EeD" kind="show" id="5Bx-ec-2WP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A99-Cg-nzc">
+                                        <frame key="frameInset" minY="30" width="118" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                        <state key="normal" title="Twitter Sign In">
+                                            <color key="titleColor" red="1" green="1" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twitterButton:" destination="jED-hU-YMy" eventType="touchUpInside" id="BYU-vP-2St"/>
+                                            <segue destination="Jw2-Mz-EeD" kind="show" id="zTZ-N8-xLY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="wsw-9k-KME" firstAttribute="top" secondItem="zPV-3u-oVz" secondAttribute="bottom" constant="71" id="1sP-rb-l44"/>
-                            <constraint firstItem="A99-Cg-nzc" firstAttribute="top" secondItem="dwd-J3-wDw" secondAttribute="bottom" id="5MO-yw-6OC"/>
-                            <constraint firstItem="Vi0-bq-MoC" firstAttribute="top" secondItem="A99-Cg-nzc" secondAttribute="bottom" id="7qj-yh-u3M"/>
-                            <constraint firstItem="dwd-J3-wDw" firstAttribute="leading" secondItem="73p-R4-KdH" secondAttribute="leadingMargin" constant="-20" id="Bxb-Tb-hPy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wsw-9k-KME" secondAttribute="trailing" id="Mbg-lK-z2b"/>
-                            <constraint firstItem="wsw-9k-KME" firstAttribute="leading" secondItem="73p-R4-KdH" secondAttribute="leadingMargin" id="MzR-jO-OmD"/>
-                            <constraint firstItem="A99-Cg-nzc" firstAttribute="leading" secondItem="73p-R4-KdH" secondAttribute="leadingMargin" constant="-20" id="QEa-Mw-hS9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A99-Cg-nzc" secondAttribute="trailing" constant="-20" id="izy-uM-vqx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dwd-J3-wDw" secondAttribute="trailing" constant="-20" id="pK3-Ww-5tA"/>
-                            <constraint firstAttribute="trailing" secondItem="wsw-9k-KME" secondAttribute="trailing" id="uBL-0E-MZN"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dw4-tR-yV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="-2411"/>
+            <point key="canvasLocation" x="-42.399999999999999" y="-2411.2443778110946"/>
         </scene>
         <!--Post-->
         <scene sceneID="HZA-2X-2OU">
@@ -223,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EPj-YG-N8r" id="o8K-o2-lr5">
-                                            <frame key="frameInset" width="560" height="82.5"/>
+                                            <frame key="frameInset" width="560" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Goes in here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zh-HL-ajN">
@@ -295,7 +282,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VjC-jz-mgT" id="8m5-lb-ukN">
-                                            <frame key="frameInset" width="600" height="199.5"/>
+                                            <frame key="frameInset" width="600" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is where all of the question text goes" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV0-zw-Ub0">
