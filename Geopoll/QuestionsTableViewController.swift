@@ -50,9 +50,7 @@ class QuestionsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //print("\n\n\n\n\n\(questionRef.key)\n\n\n\n\n\n\n")
-        
+                
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
