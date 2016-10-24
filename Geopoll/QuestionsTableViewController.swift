@@ -18,7 +18,6 @@ class QuestionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\n\n\n\n\n\(questionRef.key)\n\n\n\n\n\n\n")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,7 +29,6 @@ class QuestionsTableViewController: UITableViewController {
             // 2
             var newQuestions: [Question] = []
             
-//            print("\n\n\n\n\n\nHHHHHEEEEEEYYYYYYY\n\n\n\n\n\n\n")
             
             // 3
             for q in snapshot.children {
