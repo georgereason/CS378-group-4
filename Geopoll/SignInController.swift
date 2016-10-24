@@ -18,6 +18,7 @@ class SignInController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HEY")
         
     }
     
@@ -44,6 +45,8 @@ class SignInController: UIViewController {
                     FIRAuth.auth()?.currentUser?.link(with: credential) { (user1, error) in //this method will link a user's facebook login with their twitter login
                         
                     }
+                    self.performSegue(withIdentifier: "facebookSegue", sender: self)
+                    
                     // this conditional is just an example of how we can access a user's info easily
                     if let user3 = FIRAuth.auth()?.currentUser {
                         
