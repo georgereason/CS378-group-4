@@ -45,7 +45,7 @@ class SignInController: UIViewController {
                     FIRAuth.auth()?.currentUser?.link(with: credential) { (user1, error) in //this method will link a user's facebook login with their twitter login
                         
                     }
-                    self.performSegue(withIdentifier: "facebookSegue", sender: self)
+                    
                     
                     // this conditional is just an example of how we can access a user's info easily
                     if let user3 = FIRAuth.auth()?.currentUser {
@@ -56,9 +56,13 @@ class SignInController: UIViewController {
                             let name = profile.displayName
                             let email = profile.email
                             let photoURL = profile.photoURL
+                            var current:USER = USER(providerID: providerID, uid: uid, name: name!, email: email!)
+                            CURRENT_USER = current
                             myRootRef.child("users").child(uid).setValue(["name":name!, "email":email!]) //putting user into database
                             
                         }
+                        
+                    self.performSegue(withIdentifier: "facebookSegue", sender: self)
                     } else {
                         // No user is signed in.
                     }
