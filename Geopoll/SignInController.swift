@@ -56,8 +56,6 @@ class SignInController: UIViewController {
                             let name = profile.displayName
                             let email = profile.email
                             let photoURL = profile.photoURL
-                            var current:USER = USER(providerID: providerID, uid: uid, name: name!, email: email!)
-                            CURRENT_USER = current
                             myRootRef.child("users").child(uid).setValue(["name":name!, "email":email!]) //putting user into database
                             
                         }
