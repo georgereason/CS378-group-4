@@ -16,7 +16,7 @@ class QuestionsTableViewController: UITableViewController {
     var questions = [Question]()
 
     var alertController:UIAlertController? = nil
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,7 +126,6 @@ class QuestionsTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath)

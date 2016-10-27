@@ -61,7 +61,6 @@ class SignInController: UIViewController {
                             let currentUser = FIRAuth.auth()?.currentUser
                             let userUID = currentUser?.uid
                             myRootRef.child("users").child(userUID!).setValue(["name":name!, "email":email!]) //putting user into database
-                            
                         }
                         
                     self.performSegue(withIdentifier: "facebookSegue", sender: self)
