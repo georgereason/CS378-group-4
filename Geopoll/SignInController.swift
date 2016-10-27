@@ -18,8 +18,7 @@ class SignInController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HEY")
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "city_background.jpg")!)
     }
     
     @IBAction func facebookButton(_ sender: AnyObject) {
