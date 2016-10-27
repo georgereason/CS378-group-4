@@ -33,14 +33,12 @@ struct Question {
         self.text = snapshotValue["text"] as! String
         self.addedByUser = snapshotValue["addedByUser"] as! String
         self.answers = snapshotValue["answers"] as! [String:Int]
-//        print("HERE IS SNAPSHOT VALUE: \(snapshotValue["answeredBy"])")
         if let value = snapshotValue["answeredBy"] {
             self.answeredBy = value as! [String : String]
         }
         else {
             self.answeredBy = [:]
         }
-//        print("HERE IS ANSWERED BY: \(self.answeredBy)")
         ref = snapshot.ref
     }
     
