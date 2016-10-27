@@ -19,6 +19,8 @@
 		8A4A52871D9B470D00128602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52861D9B470D00128602 /* Assets.xcassets */; };
 		8A4A528A1D9B470D00128602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52881D9B470D00128602 /* LaunchScreen.storyboard */; };
 		8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC279A1DB1814A00F33203 /* SignInController.swift */; };
+		AB6B66461DC287740073F93C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B66451DC287740073F93C /* SettingsViewController.swift */; };
+		ABB0A1261DC09030003465B2 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A1251DC09030003465B2 /* VoteViewController.swift */; };
 		ABE890EB1DBC44880015BD55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABE890EA1DBC44880015BD55 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		8A4A52891D9B470D00128602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4A528B1D9B470D00128602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8AEC279A1DB1814A00F33203 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		AB6B66451DC287740073F93C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ABB0A1251DC09030003465B2 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
 		ABE890EA1DBC44880015BD55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABE890EC1DBC50510015BD55 /* Geopoll.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Geopoll.entitlements; sourceTree = "<group>"; };
 		FD7FB3FB07ED63CB37B6DBA0 /* Pods-Geopoll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geopoll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Geopoll/Pods-Geopoll.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				8A4A527F1D9B470D00128602 /* AppDelegate.swift */,
 				8A4A52811D9B470D00128602 /* ViewController.swift */,
 				8A4A52831D9B470D00128602 /* Main.storyboard */,
+				AB6B66451DC287740073F93C /* SettingsViewController.swift */,
+				ABB0A1251DC09030003465B2 /* VoteViewController.swift */,
 				8AEC279A1DB1814A00F33203 /* SignInController.swift */,
 				4C694E7F1DC01DD100168850 /* AddPollViewController.swift */,
 				4C3C6BBB1DBD73E1007208EF /* QuestionsTableViewController.swift */,
@@ -244,9 +250,11 @@
 				4C3C6BBE1DBD743C007208EF /* Question.swift in Sources */,
 				4C3C6BC61DBDC221007208EF /* TabBarController.swift in Sources */,
 				8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */,
+				AB6B66461DC287740073F93C /* SettingsViewController.swift in Sources */,
 				8A4A52821D9B470D00128602 /* ViewController.swift in Sources */,
 				8A4A52801D9B470D00128602 /* AppDelegate.swift in Sources */,
 				4C694E801DC01DD100168850 /* AddPollViewController.swift in Sources */,
+				ABB0A1261DC09030003465B2 /* VoteViewController.swift in Sources */,
 				4C3C6BBC1DBD73E1007208EF /* QuestionsTableViewController.swift in Sources */,
 				4C3C6BC41DBDB205007208EF /* QuestionTableViewCell.swift in Sources */,
 			);
