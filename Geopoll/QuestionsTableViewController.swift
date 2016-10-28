@@ -19,7 +19,7 @@ class QuestionsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.contentInset.top = UIApplication.shared.statusBarFrame.height
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
