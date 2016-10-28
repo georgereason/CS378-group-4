@@ -54,39 +54,6 @@ class QuestionsTableViewController: UITableViewController {
 //            self.user = User(authData: user)
 //        }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-                
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        questionRef.observe(.value, with: { snapshot in
-            // 2
-            var newQuestions: [Question] = []
-            
-            //            print("\n\n\n\n\n\nHHHHHEEEEEEYYYYYYY\n\n\n\n\n\n\n")
-            
-            // 3
-            for q in snapshot.children {
-                // 4
-                let question = Question(snapshot: q as! FIRDataSnapshot)
-                let invalidVoters = question.answeredBy
-                let currentUser = FIRAuth.auth()?.currentUser
-                let userUID = currentUser?.uid
-                if(invalidVoters[userUID!] == nil) {
-                    newQuestions.append(question)
-                }
-            }
-            
-            // 5
-            self.questions = newQuestions
-            self.tableView.reloadData()
-        })
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -24,7 +24,6 @@ class SignInController: UIViewController {
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
     
     @IBAction func facebookButton(_ sender: AnyObject) {
-        print("User signed in with facebook")
         let loginManager = LoginManager()
         // Create reference to a Firebase location
         let myRootRef = FIRDatabase.database().reference() //getting database
@@ -46,7 +45,6 @@ class SignInController: UIViewController {
                     FIRAuth.auth()?.currentUser?.link(with: credential) { (user1, error) in //this method will link a user's facebook login with their twitter login
                         
                     }
-                    
                     
                     // this conditional is just an example of how we can access a user's info easily
                     if let user3 = FIRAuth.auth()?.currentUser {
