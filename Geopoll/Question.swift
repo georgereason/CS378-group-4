@@ -33,7 +33,6 @@ struct Question {
         self.text = snapshotValue["text"] as! String
         self.addedByUser = snapshotValue["addedByUser"] as! String
         self.answers = snapshotValue["answers"] as! [String:Int]
-        
         if let value = snapshotValue["answeredBy"] {
             self.answeredBy = value as! [String : String]
         }

@@ -333,7 +333,11 @@
             </objects>
             <point key="canvasLocation" x="2166.666666666667" y="-1587.2282608695652"/>
         </scene>
+<<<<<<< HEAD
         <!--Settings-->
+=======
+        <!--Item-->
+>>>>>>> firebase_stage
         <scene sceneID="AvK-dr-ZUU">
             <objects>
                 <viewController id="q8U-IK-Mm7" customClass="SettingsViewController" customModule="Geopoll" customModuleProvider="target" sceneMemberID="viewController">
@@ -363,7 +367,11 @@
                             <constraint firstItem="Tdg-sb-ced" firstAttribute="leading" secondItem="Ozo-Cq-Ttc" secondAttribute="leadingMargin" id="gkG-aK-vGb"/>
                         </constraints>
                     </view>
+<<<<<<< HEAD
                     <tabBarItem key="tabBarItem" title="Settings" image="cog_icon" selectedImage="cog_icon" id="lea-hO-9wx"/>
+=======
+                    <tabBarItem key="tabBarItem" title="Item" id="lea-hO-9wx"/>
+>>>>>>> firebase_stage
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pqh-Py-5Ul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
