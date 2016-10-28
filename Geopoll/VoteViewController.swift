@@ -22,7 +22,6 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.QuestionText.text = self.question!.text
         self.listAnswers = Array(self.question.answers.keys)
-        var countRows = 
         invalidVoters = question.answeredBy
         // Do any additional setup after loading the view.
     }
