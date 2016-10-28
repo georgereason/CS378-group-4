@@ -36,7 +36,12 @@ class QuestionsTableViewController: UITableViewController {
             for q in snapshot.children {
                 // 4
                 let question = Question(snapshot: q as! FIRDataSnapshot)
-                newQuestions.append(question)
+                let invalidVoters = question.answeredBy
+                let currentUser = FIRAuth.auth()?.currentUser
+                let userUID = currentUser?.uid
+                if(invalidVoters[userUID!] == nil) {
+                    newQuestions.append(question)
+                }
             }
             
             // 5
@@ -103,12 +108,6 @@ class QuestionsTableViewController: UITableViewController {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc:VoteViewController? = nil
         let path = self.tableView.indexPathForSelectedRow!
-        let currentUser = FIRAuth.auth()?.currentUser
-        let userUID = currentUser?.uid
-        let invalidVoters = questions[path.row].answeredBy
-    if(invalidVoters[userUID!] == nil) {
-        print("allowing vote to occur")
-        print("current users \(questions[path.row].answeredBy)")
         if (segue.identifier == "voteSegue") {
             vc = segue.destination as! VoteViewController
             // pass data to next view
@@ -118,15 +117,6 @@ class QuestionsTableViewController: UITableViewController {
             // Set the navigation bar title to what was selected
             v.question = self.questions[path.row]
         }
-    }
-    else {
-        self.alertController = UIAlertController(title: "You already voted for this poll", message: "", preferredStyle: UIAlertControllerStyle.alert)
-        let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel) { (action) -> Void in
-            print("Okay Button Pressed")
-        }
-        self.alertController!.addAction(ok)
-        present(self.alertController!, animated: true, completion: nil)
-    }
 
     }
     
