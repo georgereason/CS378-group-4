@@ -69,7 +69,12 @@ class QuestionsTableViewController: UITableViewController {
             for q in snapshot.children {
                 // 4
                 let question = Question(snapshot: q as! FIRDataSnapshot)
-                newQuestions.append(question)
+                let invalidVoters = question.answeredBy
+                let currentUser = FIRAuth.auth()?.currentUser
+                let userUID = currentUser?.uid
+                if(invalidVoters[userUID!] == nil) {
+                    newQuestions.append(question)
+                }
             }
             
             // 5

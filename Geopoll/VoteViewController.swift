@@ -14,6 +14,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     var question: Question!
     var numRows = 0
     var listAnswers: [String] = []
+    var invalidVoters: [String: String] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
         voteTable.delegate = self
@@ -21,6 +22,8 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.QuestionText.text = self.question!.text
         self.listAnswers = Array(self.question.answers.keys)
+        var countRows = 
+        invalidVoters = question.answeredBy
         // Do any additional setup after loading the view.
     }
 
