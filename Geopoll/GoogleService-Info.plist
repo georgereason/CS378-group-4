@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>372260062205-ifl95t27judkhf52j3eee7vc9pvk483d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.372260062205-ifl95t27judkhf52j3eee7vc9pvk483d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBKelPayfE3bwldPyeZQNJxh8Lm6TgLN7s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>372260062205</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.cs378Group4.Geopoll</string>
+	<key>PROJECT_ID</key>
+	<string>geopoll-5613c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>geopoll-5613c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:372260062205:ios:a018391d63a0a887</string>
+	<key>DATABASE_URL</key>
+	<string>https://geopoll-5613c.firebaseio.com</string>
+</dict>
+</plist>
