@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddPollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AddPollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     let questionRef = FIRDatabase.database().reference(withPath: "questions")
     
@@ -27,6 +27,9 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         answerTable.delegate = self
         answerTable.dataSource = self
+        questionText.delegate = self
+        let tapOut: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddPollViewController.dismissKeyboard))
+        self.view.addGestureRecognizer(tapOut)
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,6 +100,16 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Is being called")
+        self.view.endEditing(true)
+        return false
+    }
+    
     /*
     // MARK: - Navigation
 
