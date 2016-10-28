@@ -21,6 +21,8 @@ class SignInController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "city_background.jpg")!)
     }
     
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
+    
     @IBAction func facebookButton(_ sender: AnyObject) {
         print("User signed in with facebook")
         let loginManager = LoginManager()
@@ -55,8 +57,9 @@ class SignInController: UIViewController {
                             let name = profile.displayName
                             let email = profile.email
                             let photoURL = profile.photoURL
-                            myRootRef.child("users").child(uid).setValue(["name":name!, "email":email!]) //putting user into database
-                            
+                            let currentUser = FIRAuth.auth()?.currentUser
+                            let userUID = currentUser?.uid
+                            myRootRef.child("users").child(userUID!).setValue(["name":name!, "email":email!]) //putting user into database
                         }
                         
                     self.performSegue(withIdentifier: "facebookSegue", sender: self)
@@ -71,6 +74,17 @@ class SignInController: UIViewController {
 //    @IBAction func twitterButton(_ sender: AnyObject) {
 //        print("User signed in with twitter")
 //
+//    }
+//    override func canPerformUnwindSegueAction(action: Selector, fromViewController: UIViewController, withSender sender: AnyObject) -> Bool {
+//        
+//        if (self.respondsToSelector(action)) {
+//            
+//            return self.unwindHere.on;
+//            
+//        }
+//        
+//        return false;
+//        
 //    }
     
     override func didReceiveMemoryWarning() {

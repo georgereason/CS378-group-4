@@ -16,13 +16,15 @@ struct Question {
     let addedByUser: String
     let ref: FIRDatabaseReference?
     var answers: [String:Int]
+    var answeredBy: [String : String]
     
-    init(text: String, addedByUser: String, answers: [String:Int], key: String = "") {
+    init(text: String, addedByUser: String, answers: [String:Int], key: String = "", answeredBy: [String : String]) {
         self.key = key
         self.text = text
         self.addedByUser = addedByUser
         self.answers = answers
         self.ref = nil
+        self.answeredBy = answeredBy
     }
     
     init(snapshot: FIRDataSnapshot) {
@@ -31,6 +33,12 @@ struct Question {
         self.text = snapshotValue["text"] as! String
         self.addedByUser = snapshotValue["addedByUser"] as! String
         self.answers = snapshotValue["answers"] as! [String:Int]
+        if let value = snapshotValue["answeredBy"] {
+            self.answeredBy = value as! [String : String]
+        }
+        else {
+            self.answeredBy = [:]
+        }
         ref = snapshot.ref
     }
     
@@ -38,7 +46,8 @@ struct Question {
         return [
             "text": self.text,
             "addedByUser": addedByUser,
-            "answers": self.answers
+            "answers": self.answers,
+            "answeredBy": self.answeredBy
         ]
     }
 }
