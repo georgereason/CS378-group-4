@@ -75,9 +75,14 @@ class SettingsViewController: UIViewController {
         let myRootRef = FIRDatabase.database().reference()
         let name = nameField.text
         let email = emailField.text
-    
+        let movie = movieField.text
+        let genderIndex = genderField.selectedSegmentIndex
         
-        myRootRef.child("users").child(self.userID).setValue(["name":name!, "email":email!])
+        let userToUpdeate = myRootRef.child("users").child(self.userID)
+        userToUpdeate.updateChildValues(["name":name!, "email":email!, "movie":movie!, "gender":genderIndex ])
+        
+        print("USER TO UPDATE")
+        print(userToUpdeate)
     }
 
     
