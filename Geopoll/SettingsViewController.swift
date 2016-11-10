@@ -78,11 +78,8 @@ class SettingsViewController: UIViewController {
         let movie = movieField.text
         let genderIndex = genderField.selectedSegmentIndex
         
-        let userToUpdeate = myRootRef.child("users").child(self.userID)
-        userToUpdeate.updateChildValues(["name":name!, "email":email!, "movie":movie!, "gender":genderIndex ])
-        
-        print("USER TO UPDATE")
-        print(userToUpdeate)
+        let userToUpdate = myRootRef.child("users").child(self.userID)
+        userToUpdate.updateChildValues(["name":name!, "email":email!, "movie":movie!, "gender":genderIndex ])
     }
 
     
