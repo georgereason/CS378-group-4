@@ -109,6 +109,7 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         self.view.endEditing(true)
         return false
     }
+    
     /*
     // MARK: - Navigation
 
