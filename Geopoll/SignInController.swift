@@ -54,10 +54,10 @@ class SignInController: UIViewController {
                             let uid = profile.uid;  // Provider-specific UID
                             let name = profile.displayName
                             let email = profile.email
-                            let photoURL = profile.photoURL
+                            let photoURL = "\(profile.photoURL!)"
                             let currentUser = FIRAuth.auth()?.currentUser
-                            let userUID = currentUser?.uid
-                            myRootRef.child("users").child(userUID!).setValue(["name":name!, "email":email!]) //putting user into database
+                            let userUID = "\((currentUser?.uid)!)"
+                            myRootRef.child("users").child(userUID).setValue(["name":name!, "email":email!, "imageURL":photoURL, "gender":0, "movie":"", "id":userUID]) //putting user into database
                         }
                         
                     self.performSegue(withIdentifier: "facebookSegue", sender: self)

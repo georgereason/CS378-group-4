@@ -10,10 +10,52 @@ import UIKit
 import Firebase
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var movieField: UITextField!
+    @IBOutlet weak var genderField: UISegmentedControl!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var userPhoto: UIImageView!
+    
+    var userID:String = "";
+    var currentUser:AnyObject = {} as AnyObject;
+    
+    let userRef = FIRDatabase.database().reference(withPath: "users")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let myRootRef = FIRDatabase.database().reference()
+        let currentUser = FIRAuth.auth()?.currentUser
 
+        for profile in (currentUser?.providerData)! {
+            userID = (currentUser?.uid)!
+            
+            myRootRef.queryOrdered(byChild: "users").observe(.childAdded, with: { snapshot in
+                print(snapshot)
+                for childSnap in snapshot.children.allObjects {
+                    let snap = childSnap as! FIRDataSnapshot
+                    if (snap.key == self.userID) {
+                        print("CURRENT USER")
+                        print(snap)
+                        self.currentUser = snap.value! as AnyObject
+                        self.nameField.text = self.currentUser["name"]! as! String?
+                        self.emailField.text = self.currentUser["email"]! as! String?
+                        self.movieField.text = self.currentUser["movie"]! as! String?
+                        self.genderField.selectedSegmentIndex = (self.currentUser["gender"]! as! Int?)!
+                        let url = NSURL(string: (self.currentUser["imageURL"] as? String)!)
+                        let data = NSData(contentsOf: url as! URL)
+                        if (data?.length)! > 0 {
+                            self.userPhoto.image = UIImage(data:data! as Data)
+                        } else {
+                            // In this when data is nil or empty then we can assign a placeholder image
+                            self.userPhoto.image = UIImage(named: "blank.png")
+                        }
+                    }
+                }
+            })
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +68,16 @@ class SettingsViewController: UIViewController {
         try! FIRAuth.auth()!.signOut()
         print("Sign out should have occured \(FIRAuth.auth()?.currentUser)")
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+    }
+    
+    
+    @IBAction func submitUserProfileChanges(_ sender: AnyObject) {
+        let myRootRef = FIRDatabase.database().reference()
+        let name = nameField.text
+        let email = emailField.text
+    
+        
+        myRootRef.child("users").child(self.userID).setValue(["name":name!, "email":email!])
     }
 
     
