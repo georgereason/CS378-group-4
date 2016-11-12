@@ -53,7 +53,7 @@ class SignInController: UIViewController {
                     
                     // this conditional is just an example of how we can access a user's info easily
                     if let user3 = FIRAuth.auth()?.currentUser {
-                        
+                                                
                         for profile in user3.providerData {
                             let providerID = profile.providerID
                             let uid = profile.uid;  // Provider-specific UID
@@ -62,10 +62,23 @@ class SignInController: UIViewController {
                             let photoURL = "\(profile.photoURL!)"
                             let currentUser = FIRAuth.auth()?.currentUser
                             let userUID = "\((currentUser?.uid)!)"
-                            myRootRef.child("users").child(userUID).setValue(["name":name!, "email":email!, "imageURL":photoURL, "gender":0, "movie":"", "id":userUID]) //putting user into database
+                            print("here")
+                            myRootRef.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                                
+                                if snapshot.hasChild(userUID){
+                                    
+                                    print("user exists")
+                                    
+                                }else{
+                                    
+                                    myRootRef.child("users").child(userUID).setValue(["name":name!, "email":email!, "imageURL":photoURL, "gender":0, "movie":"", "id":userUID]) //putting user into database
+                                }
+                                
+                                self.performSegue(withIdentifier: "facebookSegue", sender: self)
+
+                            })
+                            
                         }
-                        
-                    self.performSegue(withIdentifier: "facebookSegue", sender: self)
                     } else {
                         // No user is signed in.
                     }
