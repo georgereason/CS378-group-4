@@ -10,9 +10,9 @@
 		4032524619885082435664B5 /* Pods_Geopoll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DD5210C20AC7983158A0A5 /* Pods_Geopoll.framework */; };
 		4C3C6BBC1DBD73E1007208EF /* QuestionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6BBB1DBD73E1007208EF /* QuestionsTableViewController.swift */; };
 		4C3C6BBE1DBD743C007208EF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6BBD1DBD743C007208EF /* Question.swift */; };
-		4C3C6BC41DBDB205007208EF /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6BC31DBDB205007208EF /* QuestionTableViewCell.swift */; };
 		4C3C6BC61DBDC221007208EF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C6BC51DBDC221007208EF /* TabBarController.swift */; };
 		4C64FFAA1DD0DDE800258B12 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64FFA91DD0DDE800258B12 /* ResultsViewController.swift */; };
+		4C64FFAC1DD287ED00258B12 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64FFAB1DD287ED00258B12 /* ResultTableViewCell.swift */; };
 		4C694E801DC01DD100168850 /* AddPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C694E7F1DC01DD100168850 /* AddPollViewController.swift */; };
 		8A4A52801D9B470D00128602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A527F1D9B470D00128602 /* AppDelegate.swift */; };
 		8A4A52821D9B470D00128602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A52811D9B470D00128602 /* ViewController.swift */; };
@@ -29,9 +29,9 @@
 		19DD5210C20AC7983158A0A5 /* Pods_Geopoll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Geopoll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C3C6BBB1DBD73E1007208EF /* QuestionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewController.swift; sourceTree = "<group>"; };
 		4C3C6BBD1DBD743C007208EF /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		4C3C6BC31DBDB205007208EF /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4C3C6BC51DBDC221007208EF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4C64FFA91DD0DDE800258B12 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		4C64FFAB1DD287ED00258B12 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		4C694E7F1DC01DD100168850 /* AddPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPollViewController.swift; sourceTree = "<group>"; };
 		7B0855CDB641B20C59B3763D /* Pods-Geopoll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geopoll.release.xcconfig"; path = "Pods/Target Support Files/Pods-Geopoll/Pods-Geopoll.release.xcconfig"; sourceTree = "<group>"; };
 		8A4A527C1D9B470D00128602 /* Geopoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geopoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,9 +105,9 @@
 				8A4A52881D9B470D00128602 /* LaunchScreen.storyboard */,
 				8A4A528B1D9B470D00128602 /* Info.plist */,
 				4C3C6BBD1DBD743C007208EF /* Question.swift */,
-				4C3C6BC31DBDB205007208EF /* QuestionTableViewCell.swift */,
 				4C3C6BC51DBDC221007208EF /* TabBarController.swift */,
 				4C64FFA91DD0DDE800258B12 /* ResultsViewController.swift */,
+				4C64FFAB1DD287ED00258B12 /* ResultTableViewCell.swift */,
 			);
 			path = Geopoll;
 			sourceTree = "<group>";
@@ -250,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C64FFAC1DD287ED00258B12 /* ResultTableViewCell.swift in Sources */,
 				4C64FFAA1DD0DDE800258B12 /* ResultsViewController.swift in Sources */,
 				4C3C6BBE1DBD743C007208EF /* Question.swift in Sources */,
 				4C3C6BC61DBDC221007208EF /* TabBarController.swift in Sources */,
@@ -260,7 +261,6 @@
 				4C694E801DC01DD100168850 /* AddPollViewController.swift in Sources */,
 				ABB0A1261DC09030003465B2 /* VoteViewController.swift in Sources */,
 				4C3C6BBC1DBD73E1007208EF /* QuestionsTableViewController.swift in Sources */,
-				4C3C6BC41DBDB205007208EF /* QuestionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

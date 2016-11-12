@@ -18,6 +18,11 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     var myPostedQuestions = [Question]()
     var myAnsweredQuestions = [Question]()
     
+    var myPostedCells = [ResultTableViewCell]()
+    var myAnsweredCells = [ResultTableViewCell]()
+    
+    var selectedIndexPath: IndexPath? = nil
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,14 +78,19 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
             returnVal = myAnsweredQuestions.count
             
         default:
-            returnVal = myPostedQuestions.count
+            break
         }
         
         return returnVal
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let resultCell = resultsTable.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
+        let resultCell = resultsTable.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultTableViewCell
+        
         
         var question:Question?
         
@@ -88,21 +98,63 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
             
         case 0:
             question = myPostedQuestions[indexPath.row]
-            
+            myPostedCells.append(resultCell)
         case 1:
             question = myAnsweredQuestions[indexPath.row]
-            
+            myAnsweredCells.append(resultCell)
         default:
-            question = myPostedQuestions[indexPath.row]
+            break
         }
         let numVotes = question?.answeredBy.count
-        resultCell.textLabel?.text = question?.text
-        resultCell.detailTextLabel?.text = "Votes: " + String(describing: numVotes!)
-        
+        resultCell.questionText?.text = question?.text
+        resultCell.numVotes?.text = "Votes: " + String(describing: numVotes!)
+        resultCell.question = question
+        var answers = [String]()
+        for a in (question?.answers)! {
+            answers.append(a.key)
+        }
+        resultCell.answers = answers
+        resultCell.setupTable()
         return resultCell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if selectedIndexPath != nil {
+            if indexPath == selectedIndexPath {
+                var resultCell: ResultTableViewCell?
+                if(postFilterSegment.selectedSegmentIndex == 0) {
+                    resultCell = myPostedCells[indexPath.row]
+                }
+                else {
+                    resultCell = myAnsweredCells[indexPath.row]
+                }
+                return 60 + (CGFloat((resultCell?.answers.count)!) * 44)
+            }else {
+                return 60
+            }
+        }
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch selectedIndexPath {
+        case nil:
+            selectedIndexPath = indexPath
+        default:
+            if selectedIndexPath == indexPath {
+                selectedIndexPath = nil
+                
+            } else {
+                selectedIndexPath = indexPath
+            }
+        }
+        resultsTable.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
     @IBAction func segmentedControlChanged(_ sender: Any) {
+        selectedIndexPath = nil
         resultsTable.reloadData()
     }
     
