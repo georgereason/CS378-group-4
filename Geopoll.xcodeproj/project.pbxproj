@@ -18,6 +18,7 @@
 		8A4A52851D9B470D00128602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52831D9B470D00128602 /* Main.storyboard */; };
 		8A4A52871D9B470D00128602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52861D9B470D00128602 /* Assets.xcassets */; };
 		8A4A528A1D9B470D00128602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52881D9B470D00128602 /* LaunchScreen.storyboard */; };
+		8A8333DC1DD6AA97000E0D33 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8333DB1DD6AA97000E0D33 /* Location.swift */; };
 		8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC279A1DB1814A00F33203 /* SignInController.swift */; };
 		AB6B66461DC287740073F93C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B66451DC287740073F93C /* SettingsViewController.swift */; };
 		ABB0A1261DC09030003465B2 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A1251DC09030003465B2 /* VoteViewController.swift */; };
@@ -39,6 +40,7 @@
 		8A4A52861D9B470D00128602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4A52891D9B470D00128602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4A528B1D9B470D00128602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8333DB1DD6AA97000E0D33 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8AEC279A1DB1814A00F33203 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		AB6B66451DC287740073F93C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ABB0A1251DC09030003465B2 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				AB6B66451DC287740073F93C /* SettingsViewController.swift */,
 				ABB0A1251DC09030003465B2 /* VoteViewController.swift */,
 				8AEC279A1DB1814A00F33203 /* SignInController.swift */,
+				8A8333DB1DD6AA97000E0D33 /* Location.swift */,
 				4C694E7F1DC01DD100168850 /* AddPollViewController.swift */,
 				4C3C6BBB1DBD73E1007208EF /* QuestionsTableViewController.swift */,
 				8A4A52861D9B470D00128602 /* Assets.xcassets */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C3C6BBE1DBD743C007208EF /* Question.swift in Sources */,
+				8A8333DC1DD6AA97000E0D33 /* Location.swift in Sources */,
 				4C3C6BC61DBDC221007208EF /* TabBarController.swift in Sources */,
 				8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */,
 				AB6B66461DC287740073F93C /* SettingsViewController.swift in Sources */,
