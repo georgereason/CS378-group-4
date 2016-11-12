@@ -57,7 +57,10 @@
     <string>162675244190072</string>
     <key>FacebookDisplayName</key>
     <string>Geopoll</string>
-    
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Allow Geopoll to use your location?</string>
+    <key>NSLocationUsageDescription</key>
+    <string>Allow Geopoll to use your location?</string>
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>fbapi</string>
