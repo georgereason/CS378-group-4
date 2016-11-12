@@ -14,6 +14,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var postFilterSegment: UISegmentedControl!
     @IBOutlet weak var resultsTable: UITableView!
     
+    var refreshControl: UIRefreshControl?
+    
     let questionRef = FIRDatabase.database().reference(withPath: "questions")
     var myPostedQuestions = [Question]()
     var myAnsweredQuestions = [Question]()
@@ -30,34 +32,39 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         resultsTable.delegate = self
         resultsTable.dataSource = self
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
+        self.resultsTable.addSubview(refreshControl!)
+        self.loadResultsTable()
         
-        questionRef.observeSingleEvent(of: .value, with: { snapshot in
-            // 2
-            var newPosted: [Question] = []
-            var newAnswered: [Question] = []
-            
-            
-            // 3
-            for q in snapshot.children {
-                // 4
-                let question = Question(snapshot: q as! FIRDataSnapshot)
-                let currentUser = FIRAuth.auth()?.currentUser
-                let userUID = currentUser?.uid
-                let asker = question.addedByUser
-                let responders = question.answeredBy
-                if(userUID == asker) {
-                    newPosted.append(question)
-                }
-                else if(responders[userUID!] != nil) {
-                    newAnswered.append(question)
-                }
-            }
-            
-            // 5
-            self.myPostedQuestions = newPosted
-            self.myAnsweredQuestions = newAnswered
-            self.resultsTable.reloadData()
-        })
+        
+//        questionRef.observeSingleEvent(of: .value, with: { snapshot in
+//            // 2
+//            var newPosted: [Question] = []
+//            var newAnswered: [Question] = []
+//            
+//            
+//            // 3
+//            for q in snapshot.children {
+//                // 4
+//                let question = Question(snapshot: q as! FIRDataSnapshot)
+//                let currentUser = FIRAuth.auth()?.currentUser
+//                let userUID = currentUser?.uid
+//                let asker = question.addedByUser
+//                let responders = question.answeredBy
+//                if(userUID == asker) {
+//                    newPosted.append(question)
+//                }
+//                else if(responders[userUID!] != nil) {
+//                    newAnswered.append(question)
+//                }
+//            }
+//            
+//            // 5
+//            self.myPostedQuestions = newPosted
+//            self.myAnsweredQuestions = newAnswered
+//            self.resultsTable.reloadData()
+//        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -151,6 +158,43 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         resultsTable.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadResultsTable()
+    }
+    
+    func loadResultsTable() {
+        questionRef.observeSingleEvent(of: .value, with: { snapshot in
+            // 2
+            var newPosted: [Question] = []
+            var newAnswered: [Question] = []
+            
+            
+            // 3
+            for q in snapshot.children {
+                // 4
+                let question = Question(snapshot: q as! FIRDataSnapshot)
+                let currentUser = FIRAuth.auth()?.currentUser
+                let userUID = currentUser?.uid
+                let asker = question.addedByUser
+                let responders = question.answeredBy
+                if(userUID == asker) {
+                    newPosted.append(question)
+                }
+                else if(responders[userUID!] != nil) {
+                    newAnswered.append(question)
+                }
+            }
+            
+            // 5
+            self.myPostedQuestions = newPosted
+            self.myAnsweredQuestions = newAnswered
+            if(self.refreshControl?.isRefreshing)! {
+                self.refreshControl?.endRefreshing()
+            }
+            self.resultsTable.reloadData()
+        })
     }
     
     @IBAction func segmentedControlChanged(_ sender: Any) {
