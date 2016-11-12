@@ -37,7 +37,6 @@ class Location: NSObject, CLLocationManagerDelegate
         getLiveLocation = false
         super.init()
         manager.delegate = self
-        manager.requestWhenInUseAuthorization()
         loc = CLLocation(latitude: lat, longitude: long)
     }
     
