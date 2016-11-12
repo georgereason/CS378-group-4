@@ -39,7 +39,7 @@ class QuestionsTableViewController: UITableViewController {
                 let invalidVoters = question.answeredBy
                 let currentUser = FIRAuth.auth()?.currentUser
                 let userUID = currentUser?.uid
-                if(invalidVoters[userUID!] == nil) {
+                if((invalidVoters[userUID!] == nil)&&(myLocation.isInRange(location: question.location, maxDistance: question.maxDistance))) {
                     newQuestions.append(question)
                 }
             }

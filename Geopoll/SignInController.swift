@@ -13,12 +13,17 @@ import FirebaseDatabase
 import FacebookLogin
 import FacebookCore
 import FBSDKCoreKit
+import CoreLocation
+
+var myLocation: Location = Location() //declared here to make it global
 
 class SignInController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "city_background.jpg")!)
+        CLLocationManager.locationServicesEnabled()
+        myLocation = Location()
     }
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}

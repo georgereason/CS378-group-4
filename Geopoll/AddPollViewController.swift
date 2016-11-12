@@ -74,7 +74,7 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
             let currentUser = FIRAuth.auth()?.currentUser
             let uid = currentUser?.uid
             let text = self.questionText.text
-            let q = Question(text: text!, addedByUser: uid!, answers: answerDict, answeredBy: [:])
+            let q = Question(text: text!, addedByUser: uid!, answers: answerDict, answeredBy: [:], location: myLocation, maxDistance:0) //0 should be replaced with the max distance retrieved from textfield in storyboard
             questionRef.child(key).setValue(q.toAnyObject())
             answers.removeAll()
             questionText.text?.removeAll()
