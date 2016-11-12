@@ -57,7 +57,7 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         let userUID = currentUser?.uid
         let key = question.ref?.child("answers").childByAutoId().key
         let childUpdates = ["/answeredBy/\(userUID!)": self.listAnswers[indexPath.row]]
-//        question.ref?.child("answers").updateChildValues([self.listAnswers[indexPath.row] : question.answers[self.listAnswers[indexPath.row]]! + 1])
+        question.ref?.child("answers").updateChildValues([self.listAnswers[indexPath.row] : question.answers[self.listAnswers[indexPath.row]]! + 1])
         question.ref?.updateChildValues(childUpdates)//([userUID! : self.listAnswers[indexPath.row]])
         self.performSegue(withIdentifier: "unwindToMenu", sender: self)
     }
