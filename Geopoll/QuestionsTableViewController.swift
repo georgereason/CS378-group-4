@@ -35,12 +35,30 @@ class QuestionsTableViewController: UITableViewController {
             // 3
             for q in snapshot.children {
                 // 4
+                let calendar = Calendar.current
+                let dateFormatter = DateFormatter()
+                let dateFormatter2 = DateFormatter()
+                let currentDate = Date()
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+                dateFormatter2.dateFormat = "dd.MM.yyyy hh:mm:ss"
+                let dateResult = dateFormatter.string(from: currentDate)
+                let currentDateValue = dateFormatter.date(from: dateResult)
+                
                 let question = Question(snapshot: q as! FIRDataSnapshot)
-                let invalidVoters = question.answeredBy
-                let currentUser = FIRAuth.auth()?.currentUser
-                let userUID = currentUser?.uid
-                if((invalidVoters[userUID!] == nil)&&(myLocation.isInRange(location: question.location, maxDistance: question.maxDistance))) {
-                    newQuestions.append(question)
+                
+                let parsedDate = dateFormatter2.date(from: question.questionDate)
+                let date1 = calendar.startOfDay(for: parsedDate! as Date) as Date
+                let date2 = calendar.startOfDay(for: currentDateValue! as Date) as Date
+                
+                let flags = Set<Calendar.Component>([.day])
+                let components = calendar.dateComponents(flags, from: date1, to: date2)
+                if(components.day! <= 7) {
+                    let invalidVoters = question.answeredBy
+                    let currentUser = FIRAuth.auth()?.currentUser
+                    let userUID = currentUser?.uid
+                    if((invalidVoters[userUID!] == nil)&&(myLocation.isInRange(location: question.location, maxDistance: question.maxDistance))) {
+                        newQuestions.append(question)
+                    }
                 }
             }
             

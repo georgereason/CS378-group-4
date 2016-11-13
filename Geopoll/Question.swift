@@ -19,8 +19,9 @@ struct Question {
     var answeredBy: [String : String]
     var location: Location
     var maxDistance: Double
+    var questionDate: String
     
-    init(text: String, addedByUser: String, answers: [String:Int], key: String = "", answeredBy: [String : String], location:Location, maxDistance:Double) {
+    init(text: String, addedByUser: String, answers: [String:Int], key: String = "", answeredBy: [String : String], location:Location, maxDistance:Double, questionDate:String) {
         self.key = key
         self.text = text
         self.addedByUser = addedByUser
@@ -29,6 +30,7 @@ struct Question {
         self.answeredBy = answeredBy
         self.location = location
         self.maxDistance = maxDistance
+        self.questionDate = questionDate
     }
     
     init(snapshot: FIRDataSnapshot) {
@@ -38,6 +40,7 @@ struct Question {
         self.addedByUser = snapshotValue["addedByUser"] as! String
         self.answers = snapshotValue["answers"] as! [String:Int]
         self.maxDistance = snapshotValue["maxDistance"] as! Double
+        self.questionDate = snapshotValue["questionDate"] as! String
         if let value = snapshotValue["answeredBy"] {
             self.answeredBy = value as! [String : String]
         }
@@ -69,7 +72,8 @@ struct Question {
             "answers": self.answers,
             "answeredBy": self.answeredBy,
             "coordinates": coordinates,
-            "maxDistance": self.maxDistance
+            "maxDistance": self.maxDistance,
+            "questionDate": self.questionDate
         ]
     }
 }

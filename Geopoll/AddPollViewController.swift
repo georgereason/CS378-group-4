@@ -74,7 +74,11 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
             let currentUser = FIRAuth.auth()?.currentUser
             let uid = currentUser?.uid
             let text = self.questionText.text
-            let q = Question(text: text!, addedByUser: uid!, answers: answerDict, answeredBy: [:], location: myLocation, maxDistance:5) //0 should be replaced with the max distance retrieved from textfield in storyboard
+            let currentDate = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy"
+            let dateResult = formatter.string(from: currentDate) + " 00:00:00"
+            let q = Question(text: text!, addedByUser: uid!, answers: answerDict, answeredBy: [:], location: myLocation, maxDistance:5, questionDate: dateResult) //0 should be replaced with the max distance retrieved from textfield in storyboard
             questionRef.child(key).setValue(q.toAnyObject())
             answers.removeAll()
             questionText.text?.removeAll()
