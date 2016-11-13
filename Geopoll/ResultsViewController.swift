@@ -35,6 +35,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(refresh(sender:)), for: UIControlEvents.valueChanged)
         self.resultsTable.addSubview(refreshControl!)
+        self.resultsTable.rowHeight = UITableViewAutomaticDimension
+        self.resultsTable.estimatedRowHeight = 60
         self.loadResultsTable()
         
         

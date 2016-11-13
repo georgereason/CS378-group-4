@@ -22,6 +22,8 @@ class ResultTableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDe
         // Initialization code
         answerTable.delegate = self
         answerTable.dataSource = self
+        answerTable.rowHeight = UITableViewAutomaticDimension
+        answerTable.estimatedRowHeight = 44
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
