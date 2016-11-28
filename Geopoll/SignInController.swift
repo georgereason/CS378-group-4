@@ -62,11 +62,10 @@ class SignInController: UIViewController {
                             let photoURL = "\(profile.photoURL!)"
                             let currentUser = FIRAuth.auth()?.currentUser
                             let userUID = "\((currentUser?.uid)!)"
-                            print("here")
                             myRootRef.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                                
+                        
                                 if snapshot.hasChild(userUID){
-                                    
+
                                     print("user exists")
                                     
                                 }else{
