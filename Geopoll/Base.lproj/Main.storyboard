@@ -128,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="167.5" width="375" height="413.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="answerCell" textLabel="ytO-VT-8kU" style="IBUITableViewCellStyleDefault" id="CmA-wn-ALi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="answerCell" textLabel="ytO-VT-8kU" style="IBUITableViewCellStyleDefault" id="CmA-wn-ALi">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CmA-wn-ALi" id="JCU-aj-BTa">
@@ -253,7 +253,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="200" id="GtJ-fp-pYV" customClass="ResultTableViewCell" customModule="Geopoll" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="200" id="GtJ-fp-pYV" customClass="ResultTableViewCell" customModule="Geopoll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="o8K-o2-lr5">
@@ -261,7 +261,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question text here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqC-SZ-mty">
-                                                    <rect key="frame" x="8" y="8" width="877" height="54"/>
+                                                    <rect key="frame" x="8" y="8" width="252" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="54" id="dfh-Uy-dgr"/>
                                                     </constraints>
@@ -270,7 +270,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Votes: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-rU-VHG">
-                                                    <rect key="frame" x="903" y="8" width="89" height="54"/>
+                                                    <rect key="frame" x="278" y="8" width="89" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="89" id="QAp-1M-Gcp"/>
                                                     </constraints>
@@ -279,28 +279,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vvc-pV-5lo">
-                                                    <rect key="frame" x="0.0" y="62" width="1000" height="255"/>
+                                                    <rect key="frame" x="0.0" y="62" width="375" height="255"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="255" id="bMV-oi-KvV"/>
                                                     </constraints>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="answerCell" textLabel="pPi-zG-qyu" detailTextLabel="Xia-PM-nBb" style="IBUITableViewCellStyleValue1" id="i4o-mZ-0nX">
-                                                            <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
+                                                            <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i4o-mZ-0nX" id="txy-UJ-0Ur">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1000" height="43"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pPi-zG-qyu">
-                                                                        <rect key="frame" x="164" y="11" width="34" height="21"/>
+                                                                        <rect key="frame" x="15" y="11" width="34" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xia-PM-nBb">
-                                                                        <rect key="frame" x="792" y="11" width="44" height="21"/>
+                                                                        <rect key="frame" x="316" y="11" width="44" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -511,6 +511,7 @@
                         <outlet property="genderField" destination="W9F-S9-fes" id="3V4-M5-uTS"/>
                         <outlet property="movieField" destination="SWn-qu-KRX" id="1Cg-WR-cIM"/>
                         <outlet property="nameField" destination="RK0-J6-MDd" id="SgI-gT-LS0"/>
+                        <outlet property="rewardPoints" destination="reJ-xX-wfR" id="P0P-2a-ifm"/>
                         <outlet property="userPhoto" destination="X8b-Wf-9xw" id="hvB-8P-wLs"/>
                     </connections>
                 </viewController>
@@ -537,7 +538,7 @@
                                     <constraint firstAttribute="height" constant="619" id="aJg-8U-uJW"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="voteChoices" selectionStyle="default" indentationWidth="10" reuseIdentifier="voteChoices" textLabel="jrR-e5-uur" style="IBUITableViewCellStyleDefault" id="qCH-0L-Umd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="voteChoices" selectionStyle="default" indentationWidth="10" reuseIdentifier="voteChoices" textLabel="jrR-e5-uur" style="IBUITableViewCellStyleDefault" id="qCH-0L-Umd">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qCH-0L-Umd" id="KhQ-MV-vwH">

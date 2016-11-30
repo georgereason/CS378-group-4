@@ -56,7 +56,7 @@ class SignInController: UIViewController {
                                                 
                         for profile in user3.providerData {
                             let providerID = profile.providerID
-                            let uid = profile.uid;  // Provider-specific UID
+                            let uid = profile.uid // Provider-specific UID
                             let name = profile.displayName
                             let email = profile.email
                             let photoURL = "\(profile.photoURL!)"
@@ -70,7 +70,7 @@ class SignInController: UIViewController {
                                     
                                 }else{
                                     
-                                    myRootRef.child("users").child(userUID).setValue(["name":name!, "email":email!, "imageURL":photoURL, "gender":0, "movie":"", "id":userUID]) //putting user into database
+                                    myRootRef.child("users").child(userUID).setValue(["name":name!, "email":email!, "imageURL":photoURL, "gender":0, "movie":"", "id":userUID, "rewardPoints":0]) //putting user into database
                                 }
                                 
                                 self.performSegue(withIdentifier: "facebookSegue", sender: self)

@@ -34,11 +34,11 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var voteTable: UITableView!
     @IBOutlet weak var QuestionText: UILabel!
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1 // This was put in mainly for my own unit testing
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return question.answers.count // your number of cell here
+        return question.answers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,11 +55,23 @@ class VoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         // cell selected code here
         let currentUser = FIRAuth.auth()?.currentUser
         let userUID = currentUser?.uid
-        let key = question.ref?.child("answers").childByAutoId().key
+        //let key = question.ref?.child("answers").childByAutoId().key
         let childUpdates = ["/answeredBy/\(userUID!)": self.listAnswers[indexPath.row]]
         question.ref?.child("answers").updateChildValues([self.listAnswers[indexPath.row] : question.answers[self.listAnswers[indexPath.row]]! + 1])
         question.ref?.updateChildValues(childUpdates)//([userUID! : self.listAnswers[indexPath.row]])
+        updateRewardPoints(uid: userUID!)
         self.performSegue(withIdentifier: "unwindToMenu", sender: self)
+    }
+    
+    func updateRewardPoints(uid: String) {
+        let ref = FIRDatabase.database().reference().child("users").child(uid).child("rewardPoints")
+        
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            var value = snapshot.value as! Int?
+            value = value! + 1
+            ref.setValue(value)
+        })
+        
     }
     /*
     // MARK: - Navigation

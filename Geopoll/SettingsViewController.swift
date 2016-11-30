@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var genderField: UISegmentedControl!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var userPhoto: UIImageView!
+    @IBOutlet weak var rewardPoints: UILabel!
     
     var userID:String = "";
     var currentUser:AnyObject = {} as AnyObject;
@@ -42,6 +43,8 @@ class SettingsViewController: UIViewController {
                         self.nameField.text = self.currentUser["name"]! as! String?
                         self.emailField.text = self.currentUser["email"]! as! String?
                         self.movieField.text = self.currentUser["movie"]! as! String?
+                        let points = self.currentUser["rewardPoints"]! as! Int?
+                        self.rewardPoints.text = "\(points!)"
                         self.genderField.selectedSegmentIndex = (self.currentUser["gender"]! as! Int?)!
                         let url = NSURL(string: (self.currentUser["imageURL"] as? String)!)
                         let data = NSData(contentsOf: url as! URL)
