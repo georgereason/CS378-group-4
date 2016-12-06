@@ -21,6 +21,7 @@
 		8A4A528A1D9B470D00128602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4A52881D9B470D00128602 /* LaunchScreen.storyboard */; };
 		8A8333DE1DD6B330000E0D33 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8333DD1DD6B330000E0D33 /* Location.swift */; };
 		8AEC279B1DB1814A00F33203 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEC279A1DB1814A00F33203 /* SignInController.swift */; };
+		AB5D923F1DF52BF300557198 /* AddFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D923E1DF52BF300557198 /* AddFilterViewController.swift */; };
 		AB6B66461DC287740073F93C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6B66451DC287740073F93C /* SettingsViewController.swift */; };
 		ABB0A1261DC09030003465B2 /* VoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0A1251DC09030003465B2 /* VoteViewController.swift */; };
 		ABE890EB1DBC44880015BD55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABE890EA1DBC44880015BD55 /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 		8A4A528B1D9B470D00128602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A8333DD1DD6B330000E0D33 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8AEC279A1DB1814A00F33203 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		AB5D923E1DF52BF300557198 /* AddFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterViewController.swift; sourceTree = "<group>"; };
 		AB6B66451DC287740073F93C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ABB0A1251DC09030003465B2 /* VoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteViewController.swift; sourceTree = "<group>"; };
 		ABE890EA1DBC44880015BD55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				8A4A527F1D9B470D00128602 /* AppDelegate.swift */,
 				8A4A52811D9B470D00128602 /* ViewController.swift */,
 				8A4A52831D9B470D00128602 /* Main.storyboard */,
+				AB5D923E1DF52BF300557198 /* AddFilterViewController.swift */,
 				AB6B66451DC287740073F93C /* SettingsViewController.swift */,
 				ABB0A1251DC09030003465B2 /* VoteViewController.swift */,
 				8AEC279A1DB1814A00F33203 /* SignInController.swift */,
@@ -261,6 +264,7 @@
 				AB6B66461DC287740073F93C /* SettingsViewController.swift in Sources */,
 				8A4A52821D9B470D00128602 /* ViewController.swift in Sources */,
 				8A4A52801D9B470D00128602 /* AppDelegate.swift in Sources */,
+				AB5D923F1DF52BF300557198 /* AddFilterViewController.swift in Sources */,
 				4C694E801DC01DD100168850 /* AddPollViewController.swift in Sources */,
 				ABB0A1261DC09030003465B2 /* VoteViewController.swift in Sources */,
 				8A8333DE1DD6B330000E0D33 /* Location.swift in Sources */,

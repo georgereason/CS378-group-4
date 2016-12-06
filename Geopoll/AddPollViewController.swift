@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddPollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class AddPollViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, AddFilterViewControllerDelegate {
     
     let questionRef = FIRDatabase.database().reference(withPath: "questions")
     
@@ -20,6 +20,9 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var alertController:UIAlertController? = nil
     var answerTextField:UITextField? = nil
+    var questionTime:String? = "4"
+    var geoRadius:Int? = 10
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +81,7 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM.yyyy"
             let dateResult = formatter.string(from: currentDate) + " 00:00:00"
-            let q = Question(text: text!, addedByUser: uid!, answers: answerDict, answeredBy: [:], location: myLocation, maxDistance:5, questionDate: dateResult) //0 should be replaced with the max distance retrieved from textfield in storyboard
+            let q = Question(text: text!, addedByUser: uid!, answers: answerDict, answeredBy: [:], location: myLocation, maxDistance:Double(self.geoRadius!), questionDate: dateResult, dateRange: self.questionTime!) //0 should be replaced with the max distance retrieved from textfield in storyboard
             questionRef.child(key).setValue(q.toAnyObject())
             answers.removeAll()
             questionText.text?.removeAll()
@@ -114,14 +117,30 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         return false
     }
     
-    /*
+    func sendChosenTime(data: String) {
+        
+        self.questionTime = data
+    }
+    
+    func sendChosenDistance(data: Int) {
+        
+        self.geoRadius = data
+    }
+    
+    @IBAction func unwindToQuestionCreation(segue: UIStoryboardSegue) {}
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showFilterVC" {
+            let sendingVC: AddFilterViewController = segue.destination as! AddFilterViewController
+            sendingVC.delegate = self
+        }
     }
-    */
+ 
 
 }
