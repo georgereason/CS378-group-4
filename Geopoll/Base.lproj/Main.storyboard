@@ -45,6 +45,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="1" green="1" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountDidPress:" destination="jED-hU-YMy" eventType="touchUpInside" id="dlr-yj-HBu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GEOPOLL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsw-9k-KME">
                                 <frame key="frameInset" minY="47" width="375" height="125"/>
@@ -626,7 +629,7 @@
                                     <navigationItem title="Title" id="uVH-Cc-pNi">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="N8Y-Ru-GAA">
                                             <connections>
-                                                <segue destination="Qu6-BG-oDX" kind="unwind" unwindAction="unwindToQuestionCreationWithSegue:" id="AUm-FW-CTk"/>
+                                                <segue destination="Qu6-BG-oDX" kind="unwind" unwindAction="unwindToQuestionCreationWithSegue:" id="sKU-H6-7jj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

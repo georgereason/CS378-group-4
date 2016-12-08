@@ -87,20 +87,90 @@ class SignInController: UIViewController {
         }
     }
     
+    
+    @IBAction func createAccountDidPress(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Register",
+                                      message: "Register",
+                                      preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save",
+                                       style: .default) { action in
+                let emailField = alert.textFields![0]
+                let passwordField = alert.textFields![1]
+                FIRAuth.auth()!.createUser(withEmail: emailField.text!, password: passwordField.text!) { user, error in
+
+                    if error == nil {
+                    
+                        FIRAuth.auth()!.signIn(withEmail: emailField.text!,password: passwordField.text!)
+                        self.performSegue(withIdentifier: "facebookSegue", sender: self)
+                     }
+                }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        
+        alert.addTextField { textEmail in
+            textEmail.placeholder = "Enter your email"
+        }
+        
+        alert.addTextField { textPassword in
+            textPassword.isSecureTextEntry = true
+            textPassword.placeholder = "Enter your password"
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
     @IBAction func emailSignInDidPress(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Login",
+                                      message: "Login",
+                                      preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Login",
+                                       style: .default) { action in
+                                        let emailField = alert.textFields![0]
+                                        let passwordField = alert.textFields![1]
+                                
+                                        FIRAuth.auth()!.signIn(withEmail: emailField.text!,password: passwordField.text!)
+                                        self.performSegue(withIdentifier: "facebookSegue", sender: self)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        
+        alert.addTextField { textEmail in
+            textEmail.placeholder = "Enter your email"
+        }
+        
+        alert.addTextField { textPassword in
+            textPassword.isSecureTextEntry = true
+            textPassword.placeholder = "Enter your password"
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+        
         // 1
-        let emailField = alert.textFields![0]
-        let passwordField = alert.textFields![1]
+//        let emailField = alert.textFields![0]
+//        let passwordField = alert.textFields![1]
         
         // 2
-        FIRAuth.auth()!.createUser(withEmail: emailField.text!,
-                                   password: passwordField.text!) { user, error in
-                                    if error == nil {
-                                        // 3
-                                        FIRAuth.auth()!.signIn(withEmail: self.textFieldLoginEmail.text!,
-                                                               password: self.textFieldLoginPassword.text!)
-                                    }
-        }
+//        FIRAuth.auth()!.createUser(withEmail: emailField.text!,
+//                                   password: passwordField.text!) { user, error in
+//                                    if error == nil {
+//                                        // 3
+//                                        FIRAuth.auth()!.signIn(withEmail: self.textFieldLoginEmail.text!,
+//                                                               password: self.textFieldLoginPassword.text!)
+//                                    }
+//        }
     }
 //    @IBAction func twitterButton(_ sender: AnyObject) {
 //        print("User signed in with twitter")
