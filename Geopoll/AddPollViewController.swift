@@ -20,21 +20,23 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var alertController:UIAlertController? = nil
     var answerTextField:UITextField? = nil
-    var questionTime:Int? = 4
-    var geoRadius:Int? = 10
+    var questionTime:Int? = 1
+    var geoRadius:Int? = 5
+    var startAge:Int? = 0
+    var endAge:Int? = 150
+    var selectedGender:String? = "All"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         answerTable.delegate = self
         answerTable.dataSource = self
         questionText.delegate = self
-        let tapOut: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddPollViewController.dismissKeyboard))
-        self.view.addGestureRecognizer(tapOut)
+        self.hideKeyboardWhenTappedAround()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,6 +88,11 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
             answers.removeAll()
             questionText.text?.removeAll()
             answerTable.reloadData()
+            questionTime = 1
+            geoRadius = 5
+            startAge = Int.min
+            endAge = Int.max
+            selectedGender = "Any"
         }
     }
     
@@ -106,10 +113,6 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.textLabel?.text = answers[row]
         return cell
     }
-
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("Is being called")
@@ -127,11 +130,54 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         self.geoRadius = data
     }
     
+    func sendStartAge(start: Int) {
+        
+        self.startAge = start
+    }
+    
+    func sendEndAge(end: Int) {
+        
+        self.endAge = end
+    }
+    
+    func sendGender(gender: String) {
+        self.selectedGender = gender
+    }
+    
+    func getDefaultTime() -> Int {
+        return self.questionTime!
+    }
+    
+    func getDefaultDistance() -> Int {
+        return self.geoRadius!
+    }
+    
+    func getDefaultStartAge() -> Int {
+        return self.startAge!
+    }
+    
+    func getDefaultEndAge() -> Int {
+        return self.endAge!
+    }
+    
+    func getDefaultGenderIndex() -> Int {
+        if selectedGender == "All" {
+            return 0
+        }
+        else if selectedGender == "Male" {
+            return 1
+        }
+        else if selectedGender == "Female" {
+            return 2
+        }
+        return 0
+    }
+    
     @IBAction func unwindToQuestionCreation(segue: UIStoryboardSegue) {}
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -141,6 +187,6 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
             sendingVC.delegate = self
         }
     }
- 
-
+    
+    
 }
