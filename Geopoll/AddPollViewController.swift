@@ -20,7 +20,7 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var alertController:UIAlertController? = nil
     var answerTextField:UITextField? = nil
-    var questionTime:String? = "4"
+    var questionTime:Int? = 4
     var geoRadius:Int? = 10
     
     
@@ -117,7 +117,7 @@ class AddPollViewController: UIViewController, UITableViewDataSource, UITableVie
         return false
     }
     
-    func sendChosenTime(data: String) {
+    func sendChosenTime(data: Int) {
         
         self.questionTime = data
     }

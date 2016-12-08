@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddFilterViewControllerDelegate: class {
-    func sendChosenTime(data: String)
+    func sendChosenTime(data: Int)
     func sendChosenDistance(data: Int)
 }
 
@@ -48,7 +48,7 @@ class AddFilterViewController: UIViewController {
         
         timeLabel.text = timeSliderValue + " days"
         if delegate != nil {
-            delegate?.sendChosenTime(data: timeSliderValue)
+            delegate?.sendChosenTime(data: Int(timeSliderValue)!)
         }
         
     }

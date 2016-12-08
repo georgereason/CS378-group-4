@@ -20,9 +20,9 @@ struct Question {
     var location: Location
     var maxDistance: Double
     var questionDate: String
-    var dateRange: String
+    var dateRange: Int
     
-    init(text: String, addedByUser: String, answers: [String:Int], key: String = "", answeredBy: [String : String], location:Location, maxDistance:Double, questionDate:String, dateRange:String) {
+    init(text: String, addedByUser: String, answers: [String:Int], key: String = "", answeredBy: [String : String], location:Location, maxDistance:Double, questionDate:String, dateRange:Int) {
         self.key = key
         self.text = text
         self.addedByUser = addedByUser
@@ -43,7 +43,7 @@ struct Question {
         self.answers = snapshotValue["answers"] as! [String:Int]
         self.maxDistance = snapshotValue["maxDistance"] as! Double
         self.questionDate = snapshotValue["questionDate"] as! String
-        self.dateRange = snapshotValue["dateRange"] as! String
+        self.dateRange = snapshotValue["dateRange"] as! Int
         if let value = snapshotValue["answeredBy"] {
             self.answeredBy = value as! [String : String]
         }
