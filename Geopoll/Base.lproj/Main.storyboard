@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A99-Cg-nzc">
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.90604931116104126" green="0.29746255278587341" blue="0.23472386598587036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4WC-t1-5E9"/>
                                 </constraints>
@@ -57,17 +57,33 @@
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="2" height="-1"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-d5-8Cb">
+                                <color key="backgroundColor" red="0.9061206579208374" green="0.29886305332183838" blue="0.23473751544952393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1xo-lU-Cqf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Email Sign In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="emailSignInDidPress:" destination="jED-hU-YMy" eventType="touchUpInside" id="YDJ-r1-zi8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dwd-J3-wDw" secondAttribute="trailing" id="8MO-XL-HXd"/>
                             <constraint firstItem="A99-Cg-nzc" firstAttribute="top" secondItem="dwd-J3-wDw" secondAttribute="bottom" id="8zZ-0R-l6m"/>
                             <constraint firstItem="dwd-J3-wDw" firstAttribute="leading" secondItem="73p-R4-KdH" secondAttribute="leading" id="CIW-id-NlS"/>
+                            <constraint firstItem="dwd-J3-wDw" firstAttribute="top" secondItem="6Ov-d5-8Cb" secondAttribute="bottom" id="PbC-4Y-Skk"/>
                             <constraint firstItem="A99-Cg-nzc" firstAttribute="leading" secondItem="73p-R4-KdH" secondAttribute="leading" id="Qo3-1H-w1p"/>
                             <constraint firstAttribute="trailing" secondItem="A99-Cg-nzc" secondAttribute="trailing" id="RNO-yU-Zgi"/>
+                            <constraint firstItem="6Ov-d5-8Cb" firstAttribute="leading" secondItem="dwd-J3-wDw" secondAttribute="leading" id="fuE-qK-JX2"/>
                             <constraint firstItem="Vi0-bq-MoC" firstAttribute="top" secondItem="A99-Cg-nzc" secondAttribute="bottom" id="gPV-qp-wTa"/>
                             <constraint firstAttribute="trailing" secondItem="wsw-9k-KME" secondAttribute="trailing" id="iiC-wT-OG7"/>
                             <constraint firstItem="wsw-9k-KME" firstAttribute="leading" secondItem="73p-R4-KdH" secondAttribute="leading" id="lS4-vi-v0Q"/>
+                            <constraint firstItem="6Ov-d5-8Cb" firstAttribute="trailing" secondItem="dwd-J3-wDw" secondAttribute="trailing" id="v1O-tb-ybD"/>
                             <constraint firstItem="wsw-9k-KME" firstAttribute="top" secondItem="zPV-3u-oVz" secondAttribute="bottom" constant="32" id="vgC-Vd-QoF"/>
                         </constraints>
                     </view>

@@ -24,6 +24,7 @@ class SignInController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "city_background.jpg")!)
         CLLocationManager.locationServicesEnabled()
         myLocation = Location()
+        
     }
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
@@ -86,6 +87,21 @@ class SignInController: UIViewController {
         }
     }
     
+    @IBAction func emailSignInDidPress(_ sender: AnyObject) {
+        // 1
+        let emailField = alert.textFields![0]
+        let passwordField = alert.textFields![1]
+        
+        // 2
+        FIRAuth.auth()!.createUser(withEmail: emailField.text!,
+                                   password: passwordField.text!) { user, error in
+                                    if error == nil {
+                                        // 3
+                                        FIRAuth.auth()!.signIn(withEmail: self.textFieldLoginEmail.text!,
+                                                               password: self.textFieldLoginPassword.text!)
+                                    }
+        }
+    }
 //    @IBAction func twitterButton(_ sender: AnyObject) {
 //        print("User signed in with twitter")
 //
