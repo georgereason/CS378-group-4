@@ -46,7 +46,7 @@ class AddFilterViewController: UIViewController {
         let timeSliderValue = formatter.string(from: NSNumber(value: timeSlider.value))!
         
         
-        timeLabel.text = timeSliderValue + " days"
+        timeLabel.text = timeSliderValue + " Days"
         if delegate != nil {
             delegate?.sendChosenTime(data: Int(timeSliderValue)!)
         }
@@ -57,7 +57,7 @@ class AddFilterViewController: UIViewController {
         
         let geoSliderValue = Int(geoSlider.value)
         
-        geoLabel.text = String(geoSliderValue) + " miles"
+        geoLabel.text = String(geoSliderValue) + " Miles"
         if delegate != nil {
             delegate?.sendChosenDistance(data: geoSliderValue)
         }
